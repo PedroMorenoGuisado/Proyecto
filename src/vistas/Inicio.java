@@ -32,7 +32,7 @@ public class Inicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(116, 58, 89, 23);
+		btnNewButton.setBounds(120, 129, 89, 23);
 		panel.add(btnNewButton);
 	}
 }
