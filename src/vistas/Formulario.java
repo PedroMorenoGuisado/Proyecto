@@ -12,6 +12,11 @@ import javax.swing.border.EmptyBorder;
 import controlador.ControladorVentanas;
 
 import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.border.BevelBorder;
+import java.awt.Color;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JScrollPane;
 
 public class Formulario extends JFrame {
 
@@ -27,7 +32,7 @@ public class Formulario extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Entrar");
-		btnNewButton.setBounds(175, 133, 89, 23);
+		btnNewButton.setBounds(179, 216, 89, 23);
 		contentPane.add(btnNewButton);
 		
 		btnNewButton.addActionListener(new ActionListener() {
@@ -36,5 +41,4 @@ public class Formulario extends JFrame {
 			}
 		});
 	}
-
 }
