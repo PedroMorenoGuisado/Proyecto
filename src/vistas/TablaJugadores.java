@@ -12,6 +12,12 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
+import javax.swing.SwingConstants;
+import javax.swing.JScrollBar;
+import javax.swing.JSlider;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.SpinnerListModel;
 
 public class TablaJugadores extends JFrame {
 
@@ -41,32 +47,51 @@ public class TablaJugadores extends JFrame {
 		panel.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("Nombre");
-		lblNewLabel.setBounds(78, 43, 46, 14);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(49, 39, 75, 23);
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("victorias");
-		lblNewLabel_1.setBounds(78, 68, 46, 14);
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(49, 69, 75, 23);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("empates");
-		lblNewLabel_2.setBounds(78, 93, 46, 14);
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(49, 94, 75, 23);
 		panel.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("derrotas");
-		lblNewLabel_3.setBounds(78, 116, 46, 14);
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setBounds(49, 116, 75, 29);
 		panel.add(lblNewLabel_3);
 		
 		textField = new JTextField();
-		textField.setBounds(142, 40, 86, 20);
+		textField.setBounds(142, 40, 107, 20);
 		panel.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("Total");
-		lblNewLabel_4.setBounds(78, 141, 46, 14);
-		panel.add(lblNewLabel_4);
-		
 		JLabel lblNewLabel_5 = new JLabel("Nivel");
-		lblNewLabel_5.setBounds(78, 166, 46, 14);
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_5.setBounds(49, 168, 74, 20);
 		panel.add(lblNewLabel_5);
+		
+		JSpinner spinner = new JSpinner();
+		spinner.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
+		spinner.setBounds(142, 70, 107, 20);
+		panel.add(spinner);
+		
+		JSpinner spinner_1 = new JSpinner();
+		spinner_1.setBounds(142, 95, 107, 20);
+		panel.add(spinner_1);
+		
+		JSpinner spinner_1_1 = new JSpinner();
+		spinner_1_1.setBounds(142, 120, 107, 20);
+		panel.add(spinner_1_1);
+		
+		JSpinner spinner_1_1_1 = new JSpinner();
+		spinner_1_1_1.setModel(new SpinnerListModel(new String[] {"Principiante", "Aficionado", "Profesional", "Clase Mundial", "Leyenda"}));
+		spinner_1_1_1.setBounds(142, 168, 107, 20);
+		panel.add(spinner_1_1_1);
 	}
 }
