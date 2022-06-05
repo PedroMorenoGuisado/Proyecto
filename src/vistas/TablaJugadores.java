@@ -18,6 +18,8 @@ import javax.swing.JSlider;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SpinnerListModel;
+import java.awt.Color;
+import javax.swing.border.BevelBorder;
 
 public class TablaJugadores extends JFrame {
 
@@ -35,6 +37,8 @@ public class TablaJugadores extends JFrame {
 		setContentPane(contentPane);
 		
 		JPanel panel = new JPanel();
+		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.BLACK, null, null, null));
+		panel.setBackground(Color.ORANGE);
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
