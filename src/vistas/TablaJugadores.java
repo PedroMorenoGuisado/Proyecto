@@ -6,6 +6,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import beans.Jugador;
+import controlador.ControladorJugadores;
+import modelo.ModeloJugador;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -24,7 +29,7 @@ import javax.swing.border.BevelBorder;
 public class TablaJugadores extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField campoNombre;
 
 
 	public TablaJugadores() {
@@ -66,41 +71,46 @@ public class TablaJugadores extends JFrame {
 		lblNewLabel_3.setBounds(49, 116, 75, 29);
 		panel.add(lblNewLabel_3);
 		
-		textField = new JTextField();
-		textField.setBounds(142, 40, 107, 20);
-		panel.add(textField);
-		textField.setColumns(10);
+		campoNombre = new JTextField();
+		campoNombre.setBounds(142, 40, 107, 20);
+		panel.add(campoNombre);
+		campoNombre.setColumns(10);
 		
 		JLabel lblNewLabel_5 = new JLabel("Nivel");
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5.setBounds(49, 168, 74, 20);
 		panel.add(lblNewLabel_5);
 		
-		JSpinner spinner = new JSpinner();
-		spinner.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
-		spinner.setBounds(142, 70, 107, 20);
-		panel.add(spinner);
+		JSpinner campoVictorias = new JSpinner();
+		campoVictorias.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
+		campoVictorias.setBounds(142, 70, 107, 20);
+		panel.add(campoVictorias);
 		
-		JSpinner spinner_1 = new JSpinner();
-		spinner_1.setBounds(142, 95, 107, 20);
-		panel.add(spinner_1);
+		JSpinner campoEmpates = new JSpinner();
+		campoEmpates.setBounds(142, 95, 107, 20);
+		panel.add(campoEmpates);
 		
-		JSpinner spinner_1_1 = new JSpinner();
-		spinner_1_1.setBounds(142, 120, 107, 20);
-		panel.add(spinner_1_1);
+		JSpinner CampoDerrotas = new JSpinner();
+		CampoDerrotas.setBounds(142, 120, 107, 20);
+		panel.add(CampoDerrotas);
 		
-		JSpinner spinner_1_1_1 = new JSpinner();
-		spinner_1_1_1.setModel(new SpinnerListModel(new String[] {"Principiante", "Aficionado", "Profesional", "Clase Mundial", "Leyenda"}));
-		spinner_1_1_1.setBounds(142, 168, 107, 20);
-		panel.add(spinner_1_1_1);
+		JSpinner campoNivel = new JSpinner();
+		campoNivel.setModel(new SpinnerListModel(new String[] {"Principiante", "Aficionado", "Profesional", "Clase Mundial", "Leyenda"}));
+		campoNivel.setBounds(142, 168, 107, 20);
+		panel.add(campoNivel);
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Recoger los datos del formulario (de los inputText)
-				
-				// Montar un objecto jugador
-				
+				String nombre = campoNombre.getText();
+				int victorias = (int) campoVictorias.getValue();
+				int empates = (int) campoEmpates.getValue();
+				int derrotas = (int) CampoDerrotas.getValue();
+				String nivel = "Principiante"; //campoNivel.getToolTipText();
+				// Montar un objeto jugador
+				Jugador jugador = new Jugador(nombre, victorias, empates, derrotas, nivel);
 				// Llamar al controlador mandando el objeto jugador
+				new ControladorJugadores().guardarJugador(jugador);
 				
 			}
 		});
