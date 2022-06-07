@@ -95,7 +95,7 @@ public class TablaJugadores extends JFrame {
 		panel.add(CampoDerrotas);
 		
 		JSpinner campoNivel = new JSpinner();
-		campoNivel.setModel(new SpinnerListModel(new String[] {"Principiante", "Aficionado", "Profesional", "Clase Mundial", "Leyenda"}));
+		campoNivel.setModel(new SpinnerListModel(new String[] {"Principiante"}));
 		campoNivel.setBounds(142, 168, 107, 20);
 		panel.add(campoNivel);
 		
