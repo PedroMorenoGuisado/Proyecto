@@ -106,7 +106,7 @@ public class TablaJugadores extends JFrame {
 				int victorias = (int) campoVictorias.getValue();
 				int empates = (int) campoEmpates.getValue();
 				int derrotas = (int) CampoDerrotas.getValue();
-				String nivel = "Principiante"; //campoNivel.getToolTipText();
+				String nivel = campoNivel.getToolTipText();
 				// Montar un objeto jugador
 				Jugador jugador = new Jugador(nombre, victorias, empates, derrotas, nivel);
 				// Llamar al controlador mandando el objeto jugador

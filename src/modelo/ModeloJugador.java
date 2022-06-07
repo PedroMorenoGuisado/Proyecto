@@ -14,7 +14,7 @@ public class ModeloJugador {
 		String nivel = jugador.getNivel();
 		// Crear sentencia para insertar en BBDD
 		Conexion.ejecutarUpdate(
-			"INSERT INTO tablajugadores (nombre, victorias, empates, derrotas) VALUES ('"+
+			"INSERT INTO niveles (nombre, victorias, empates, derrotas) VALUES ('"+
 			nombre+"', '"+victorias+"', '"+empates+"', '"+derrotas+"');"
 		);
 	}
