@@ -5,15 +5,13 @@ public class Jugador {
 	int victorias;
 	int derrotas;
 	int empates;
-	int total;
 	String nivel;
-	public Jugador(String nombre, int victorias, int derrotas, int empates, int total, String nivel) {
+	public Jugador(String nombre, int victorias, int derrotas, int empates, String nivel) {
 		super();
 		this.nombre = nombre;
 		this.victorias = victorias;
 		this.derrotas = derrotas;
 		this.empates = empates;
-		this.total = total;
 		this.nivel = nivel;
 	}
 	public String getNombre() {
@@ -40,12 +38,6 @@ public class Jugador {
 	public void setEmpates(int empates) {
 		this.empates = empates;
 	}
-	public int getTotal() {
-		return total;
-	}
-	public void setTotal(int total) {
-		this.total = total;
-	}
 	public String getNivel() {
 		return nivel;
 	}
@@ -55,7 +47,7 @@ public class Jugador {
 	@Override
 	public String toString() {
 		return "Jugador [nombre=" + nombre + ", victorias=" + victorias + ", derrotas=" + derrotas + ", empates="
-				+ empates + ", total=" + total + ", nivel=" + nivel + "]";
+				+ empates + ", nivel=" + nivel + "]";
 	}
 	
 	
