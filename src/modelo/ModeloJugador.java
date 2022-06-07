@@ -1,5 +1,6 @@
 package modelo;
 
+import bbdd.Conexion;
 import beans.Jugador;
 
 public class ModeloJugador {
@@ -12,7 +13,7 @@ public class ModeloJugador {
 		int derrotas = jugador.getDerrotas();
 		String nivel = jugador.getNivel();
 		// Crear sentencia para insertar en BBDD
-		
+		Conexion.ejecutarUpdate("INSERT INTO tablajugadores (nombre, victorias, empates, derrotas, nivel) VALUES ('"+nombre+"', '"+victorias+"', '"+empates+"', '"+derrotas+"', '"+nivel+"');");
 	}
 
 }
