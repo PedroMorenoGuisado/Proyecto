@@ -43,10 +43,6 @@ public class TablaJugadores extends JFrame {
 		panel.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Entrar");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnNewButton.setBounds(142, 217, 89, 23);
 		panel.add(btnNewButton);
 		
@@ -97,5 +93,16 @@ public class TablaJugadores extends JFrame {
 		spinner_1_1_1.setModel(new SpinnerListModel(new String[] {"Principiante", "Aficionado", "Profesional", "Clase Mundial", "Leyenda"}));
 		spinner_1_1_1.setBounds(142, 168, 107, 20);
 		panel.add(spinner_1_1_1);
+		
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Recoger los datos del formulario (de los inputText)
+				
+				// Montar un objecto jugador
+				
+				// Llamar al controlador mandando el objeto jugador
+				
+			}
+		});
 	}
 }
