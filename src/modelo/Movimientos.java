@@ -10,7 +10,7 @@ import beans.Movimiento;
 
 public class Movimientos {
 		public void guardarMovimiento(Movimiento movimiento) {
-			// Recoger los datos requeridos de la varaible jugador
+			// Recoger_los_datos_requeridos_de_la_varaible_jugador
 			String nombre = movimiento.getNombre();
 			int victorias = movimiento.getVictorias();
 			int empates = movimiento.getEmpates();
@@ -19,14 +19,14 @@ public class Movimientos {
 			int Tiempodejuego = movimiento.getTiempodejuego();
 			int jugado = movimiento.getJugado();
 			int Nºdeturnos = movimiento.getNºdeturnos();
-			// Crear sentencia para insertar en BBDD
+			// Crear_sentencia_para_insertar_en_BBDD
 			Conexion.ejecutarUpdate(
-				"INSERT INTO tablajugadores (nombre, victorias, empates, derrotas) VALUES ('"+
-				nombre+"', '"+victorias+"', '"+empates+"', '"+derrotas+"', + '"+Fechadecreación+"');"
+				"INSERT INTO tablajugadores (nombre, victorias, empates, derrotas, Tiempodejuego, jugado, Nºdeturnos) VALUES ('"+
+				nombre+"', '"+victorias+"', '"+empates+"', '"+derrotas+"', + '"+Fechadecreación+"', '"+Tiempodejuego+"', '"+jugado+"', '"+Nºdeturnos+"');"
 			);
 		}
 	public ArrayList<Movimientos> mostrarMovimientos(){
-		// TODO: Hacer la petición a BBDD para recoger los alumnos
+		// TODO: Hacer_la_petición_a_BBDD_para_recoger_los_alumnos
 		ArrayList<Movimiento> jugador = new ArrayList<Movimiento>();
 		ResultSet resultado = Conexion.ejecutarSentencia("SELECT * FROM tablajugadores;");
 		try {
@@ -35,8 +35,11 @@ public class Movimientos {
 			int derrotas;
 			int empates;
 			int Fechadecreación;
+			int Tiempodejuego;
+			int jugado;
+			int Nºdeturnos;
 			while(resultado.next()) {
-				movimiento.add(new EstadisticaJugador(nombre, victorias, derrotas, empates, nivel));
+				Movimiento.add(new Movimiento(nombre, victorias, derrotas, empates, Fechadecreación, Tiempodejuego, jugado, Nºdeturnos));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
