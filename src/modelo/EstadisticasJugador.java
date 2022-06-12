@@ -17,8 +17,8 @@ public class EstadisticasJugador {
 		String nivel = jugador.getNivel();
 		// Crear_sentencia_para_insertar_en_BBDD
 		Conexion.ejecutarUpdate(
-			"INSERT INTO niveles (nombre, victorias, empates, derrotas) VALUES ('"+
-			nombre+"', '"+victorias+"', '"+empates+"', '"+derrotas+"');"
+			"INSERT INTO niveles (nombre, victorias, empates, derrotas, nivel) VALUES ('"+
+			nombre+"', '"+victorias+"', '"+empates+"', '"+derrotas+"', '"+nivel+"');"
 		);
 	}
 	
