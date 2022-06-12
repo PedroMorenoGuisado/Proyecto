@@ -1,12 +1,12 @@
 package beans;
 
-public class Jugador {
+public class EstadisticaJugador {
 	String nombre;
 	int victorias;
 	int derrotas;
 	int empates;
 	String nivel;
-	public Jugador(String nombre, int victorias, int derrotas, int empates, String nivel) {
+	public EstadisticaJugador(String nombre, int victorias, int derrotas, int empates, String nivel) {
 		super();
 		this.nombre = nombre;
 		this.victorias = victorias;
@@ -49,6 +49,4 @@ public class Jugador {
 		return "Jugador [nombre=" + nombre + ", victorias=" + victorias + ", derrotas=" + derrotas + ", empates="
 				+ empates + ", nivel=" + nivel + "]";
 	}
-	
-	
 }
