@@ -1,7 +1,5 @@
 package vistas;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,11 +10,6 @@ import javax.swing.border.EmptyBorder;
 import controlador.ControladorVentanas;
 
 import javax.swing.JButton;
-import javax.swing.JTable;
-import javax.swing.border.BevelBorder;
-import java.awt.Color;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.JScrollPane;
 
 public class Formulario extends JFrame {
 

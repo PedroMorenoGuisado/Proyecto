@@ -1,16 +1,13 @@
 package vistas;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
-import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import controlador.ControladorVentanas;
 
-import java.awt.event.*;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -20,9 +17,6 @@ import javax.swing.SwingConstants;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
-import javax.swing.UIManager;
-import java.awt.Window.Type;
-import java.awt.Dialog.ModalExclusionType;
 
 public class Inicio extends JFrame {
 
