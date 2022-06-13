@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import bbdd.Conexion;
-import beans.EstadisticaJugador;
 import beans.Movimiento;
 
 public class Movimientos {
@@ -25,7 +24,7 @@ public class Movimientos {
 				nombre+"', '"+victorias+"', '"+empates+"', '"+derrotas+"', + '"+Fechadecreación+"', '"+Tiempodejuego+"', '"+jugado+"', '"+Nºdeturnos+"');"
 			);
 		}
-	public ArrayList<Movimientos> mostrarMovimientos(){
+	public ArrayList<Movimiento> mostrarMovimiento(){
 		// TODO: Hacer_la_petición_a_BBDD_para_recoger_los_alumnos
 		ArrayList<Movimiento> jugador = new ArrayList<Movimiento>();
 		ResultSet resultado = Conexion.ejecutarSentencia("SELECT * FROM tablajugadores;");
@@ -39,11 +38,11 @@ public class Movimientos {
 			int jugado = 0;
 			int Nºdeturnos = 0;
 			while(resultado.next()) {
-				Movimiento.add(new Movimiento(nombre, victorias, derrotas, empates, Fechadecreación, Tiempodejuego, jugado, Nºdeturnos));
+				jugador.add(new Movimiento(nombre, victorias, derrotas, empates, Fechadecreación, Tiempodejuego, jugado, Nºdeturnos));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return jugador;
 	}
 }
