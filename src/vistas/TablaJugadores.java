@@ -7,9 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import beans.Jugador;
+import beans.EstadisticaJugador;
 import controlador.ControladorJugadores;
-import modelo.ModeloJugador;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -108,9 +107,9 @@ public class TablaJugadores extends JFrame {
 				int derrotas = (int) CampoDerrotas.getValue();
 				String nivel = campoNivel.getToolTipText();
 				// Montar un objeto jugador
-				Jugador jugador = new Jugador(nombre, victorias, empates, derrotas, nivel);
+				EstadisticaJugador jugador = new EstadisticaJugador(nombre, victorias, empates, derrotas, nivel);
 				// Llamar al controlador mandando el objeto jugador
-				new ControladorJugadores().guardarJugador(jugador);
+				new ControladorJugadores().guardarEstadisticasJugador(jugador);
 				
 			}
 		});

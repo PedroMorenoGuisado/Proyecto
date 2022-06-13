@@ -1,12 +1,12 @@
 package controlador;
 
-import beans.Jugador;
-import modelo.ModeloJugador;
+import beans.EstadisticaJugador;
+import modelo.EstadisticasJugador;
 
 public class ControladorJugadores {
 
-	public void guardarJugador(Jugador jugador) {
-		new ModeloJugador().guardarJugador(jugador);
+	public void guardarEstadisticasJugador(EstadisticaJugador jugador) {
+		new EstadisticasJugador().guardarEstadisticasJugador(jugador);
 	}
 	
 }
