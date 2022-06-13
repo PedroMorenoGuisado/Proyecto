@@ -69,5 +69,9 @@ public class Movimiento {
 	public void setNºdeturnos(int nºdeturnos) {
 		Nºdeturnos = nºdeturnos;
 	}
+	public static void add(Movimiento movimiento) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

@@ -30,20 +30,20 @@ public class Movimientos {
 		ArrayList<Movimiento> jugador = new ArrayList<Movimiento>();
 		ResultSet resultado = Conexion.ejecutarSentencia("SELECT * FROM tablajugadores;");
 		try {
-			String nombre;
-			int victorias;
-			int derrotas;
-			int empates;
-			int Fechadecreación;
-			int Tiempodejuego;
-			int jugado;
-			int Nºdeturnos;
+			String nombre = null;
+			int victorias = 0;
+			int derrotas = 0;
+			int empates = 0;
+			int Fechadecreación = 0;
+			int Tiempodejuego = 0;
+			int jugado = 0;
+			int Nºdeturnos = 0;
 			while(resultado.next()) {
 				Movimiento.add(new Movimiento(nombre, victorias, derrotas, empates, Fechadecreación, Tiempodejuego, jugado, Nºdeturnos));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return movimiento;
+		return null;
 	}
 }

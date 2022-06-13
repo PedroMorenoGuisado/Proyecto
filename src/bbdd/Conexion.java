@@ -8,10 +8,10 @@ public class Conexion {
     static String timeZone = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     static String dbName = "tablajugadores";
     static String host = "localhost";
-    static int port = 8080;
+    static int port = 3007;
     static String url = "jdbc:mysql://" + host + ":" + port + "/" + dbName + timeZone;
     static String user = "root";
-    static String pass = "manolo";
+    static String pass = "pymaso2002";
     static String driver = "com.mysql.cj.jdbc.Driver";
 
     static Connection conexion;
