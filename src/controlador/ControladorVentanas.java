@@ -3,6 +3,7 @@ package controlador;
 import vistas.Formulario;
 import vistas.TablaJugadores;
 import vistas.Boton;
+import vistas.TablaJugadores2;
 
 public class ControladorVentanas {
 	public void abrirFormulario() {
@@ -14,5 +15,8 @@ public class ControladorVentanas {
 	}
 	public void abrirBoton() {
 		new Boton();
+	}
+	public void abrirTablaJugadores2() {
+		new TablaJugadores2();
 	}
 }

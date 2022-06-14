@@ -22,17 +22,19 @@ public class EstadisticasJugador {
 		);
 	}
 	
-	public ArrayList<EstadisticaJugador> mostrarEstadisticas(){
+
+	public ArrayList<EstadisticaJugador> recogerEstadisticas(){
 		// TODO: Hacer_la_petición_a_BBDD_para_recoger_los_alumnos
 		ArrayList<EstadisticaJugador> jugador = new ArrayList<EstadisticaJugador>();
 		ResultSet resultado = Conexion.ejecutarSentencia("SELECT * FROM niveles;");
 		try {
-			String nombre = null;
-			int victorias = 0;
-			int derrotas = 0;
-			int empates = 0;
-			String nivel = null;
 			while(resultado.next()) {
+				String nombre = resultado.getString("Nombre");
+				int victorias = resultado.getInt("Victorias");
+				int derrotas = resultado.getInt("Derrotas");
+				int empates = resultado.getInt("Empates");
+				String nivel= resultado.getString("nivel");
+				Conexion.ejecutarUpdate(nombre+victorias+derrotas+empates+nivel);
 				jugador.add(new EstadisticaJugador(nombre, victorias, derrotas, empates, nivel));
 			}
 		} catch (SQLException e) {
@@ -40,5 +42,4 @@ public class EstadisticasJugador {
 		}
 		return jugador;
 	}
-	
 }
