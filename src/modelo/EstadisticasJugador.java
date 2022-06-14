@@ -42,4 +42,13 @@ public class EstadisticasJugador {
 		}
 		return jugador;
 	}
+	
+	public void borrarEstadisticasJugador(EstadisticaJugador jugador) {
+		// Recoger_los_datos_requeridos_de_la_variable_jugador
+		String nombre = jugador.getNombre();
+		// Crear_sentencia_para_insertar_en_BBDD
+		Conexion.ejecutarUpdate(
+			"DELETE FROM niveles WHERE NOMBRE='"+nombre+"';"
+		);
+	}
 }

@@ -15,5 +15,9 @@ public class ControladorJugadores {
 		ArrayList<EstadisticaJugador> jugador = new EstadisticasJugador().recogerEstadisticas();
 		return jugador;
 	}
+
+	public void eliminar(EstadisticaJugador jugador) {
+		new EstadisticasJugador().borrarEstadisticasJugador(jugador);
+	}
 	
 }

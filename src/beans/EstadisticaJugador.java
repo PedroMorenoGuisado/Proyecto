@@ -46,7 +46,6 @@ public class EstadisticaJugador {
 	}
 	@Override
 	public String toString() {
-		return "Jugador [nombre=" + nombre + ", victorias=" + victorias + ", derrotas=" + derrotas + ", empates="
-				+ empates + ", nivel=" + nivel + "]";
+		return this.nombre;
 	}
 }

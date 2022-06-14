@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 import beans.EstadisticaJugador;
 import controlador.ControladorJugadores;
+import controlador.ControladorVentanas;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -105,6 +106,12 @@ public class TablaJugadores extends JFrame {
 		btnNewButton2.setBackground(new Color(255, 140, 0));
 		btnNewButton2.setBounds(284, 11, 130, 23);
 		panel.add(btnNewButton2);
+		
+		btnNewButton2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new ControladorVentanas().abrirTablaJugadores3();
+			}
+		});
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
