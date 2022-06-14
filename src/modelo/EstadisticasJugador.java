@@ -34,7 +34,7 @@ public class EstadisticasJugador {
 				int derrotas = resultado.getInt("Derrotas");
 				int empates = resultado.getInt("Empates");
 				String nivel= resultado.getString("nivel");
-				Conexion.ejecutarUpdate(nombre+victorias+derrotas+empates+nivel);
+				
 				jugador.add(new EstadisticaJugador(nombre, victorias, derrotas, empates, nivel));
 			}
 		} catch (SQLException e) {

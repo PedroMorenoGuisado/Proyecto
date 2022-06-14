@@ -2,6 +2,7 @@ package vistas;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -97,6 +98,13 @@ public class TablaJugadores extends JFrame {
 		campoNivel.setModel(new SpinnerListModel(new String[] {"Principiante"}));
 		campoNivel.setBounds(142, 168, 107, 20);
 		panel.add(campoNivel);
+		
+		JButton btnNewButton2 = new JButton("Eliminar jugador");
+		btnNewButton2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnNewButton2.setForeground(Color.BLACK);
+		btnNewButton2.setBackground(new Color(255, 140, 0));
+		btnNewButton2.setBounds(284, 11, 130, 23);
+		panel.add(btnNewButton2);
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

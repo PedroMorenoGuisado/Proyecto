@@ -2,6 +2,10 @@ package controlador;
 
 import vistas.Formulario;
 import vistas.TablaJugadores;
+
+import java.util.ArrayList;
+
+import beans.EstadisticaJugador;
 import vistas.Boton;
 import vistas.TablaJugadores2;
 
@@ -17,6 +21,7 @@ public class ControladorVentanas {
 		new Boton();
 	}
 	public void abrirTablaJugadores2() {
-		new TablaJugadores2();
+		ArrayList<EstadisticaJugador> jugadores = new ControladorJugadores().actualizarEstadisticas();
+		new TablaJugadores2(jugadores);
 	}
 }

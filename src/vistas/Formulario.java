@@ -25,12 +25,22 @@ public class Formulario extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Entrar");
-		btnNewButton.setBounds(179, 216, 89, 23);
+		btnNewButton.setBounds(177, 208, 89, 23);
 		contentPane.add(btnNewButton);
+		
+		JButton botonTabla = new JButton("Tabla");
+		botonTabla.setBounds(177, 58, 89, 23);
+		contentPane.add(botonTabla);
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new ControladorVentanas().abrirTablaJugadores();
+			}
+		});
+
+		botonTabla.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new ControladorVentanas().abrirTablaJugadores2();
 			}
 		});
 	}
