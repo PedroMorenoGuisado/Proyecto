@@ -20,4 +20,7 @@ public class ControladorJugadores {
 		new EstadisticasJugador().borrarEstadisticasJugador(jugador);
 	}
 	
+	public void modificar(EstadisticaJugador jugador) {
+		new EstadisticasJugador().modificarEstadisticasJugador(jugador);
+	}
 }

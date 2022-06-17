@@ -18,13 +18,13 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class TablaJugadores3 extends JFrame {
+public class EliminarJugadores extends JFrame {
 
 	private JPanel contentPane;
 	/**
 	 * Create the frame.
 	 */
-	public TablaJugadores3(ArrayList<EstadisticaJugador> jugadores) {
+	public EliminarJugadores(ArrayList<EstadisticaJugador> jugadores) {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

@@ -1,33 +1,40 @@
 package controlador;
 
 import vistas.Formulario;
-import vistas.TablaJugadores;
+import vistas.ModificarJugador;
+import vistas.CrearJugadores;
 
 import java.util.ArrayList;
 
 import beans.EstadisticaJugador;
 import vistas.Boton;
-import vistas.TablaJugadores2;
-import vistas.TablaJugadores3;
+import vistas.TablaBBDD;
+import vistas.EliminarJugadores;
 
 public class ControladorVentanas {
 	public void abrirFormulario() {
 		new Formulario();
 	}
 	
-	public void abrirTablaJugadores() {
-		new TablaJugadores();
+	public void abrirCrearJugadores() {
+		new CrearJugadores();
 	}
 	public void abrirBoton() {
 		new Boton();
 	}
-	public void abrirTablaJugadores2() {
+	public void abrirTablaBBDD() {
 		ArrayList<EstadisticaJugador> jugadores = new ControladorJugadores().actualizarEstadisticas();
-		new TablaJugadores2(jugadores);
+		new TablaBBDD(jugadores);
 	}
 	
-	public void abrirTablaJugadores3() {
+	public void abrirEliminarJugadores() {
 		ArrayList<EstadisticaJugador> jugadores = new ControladorJugadores().actualizarEstadisticas();
-		new TablaJugadores3(jugadores);
+		new EliminarJugadores(jugadores);
+	}
+
+	public void abrirModificarJugador() {
+		ArrayList<EstadisticaJugador> jugadores = new ControladorJugadores().actualizarEstadisticas();
+		new ModificarJugador(jugadores);
+		
 	}
 }

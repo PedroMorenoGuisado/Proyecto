@@ -26,14 +26,14 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 
-public class TablaJugadores2 extends JFrame {
+public class TablaBBDD extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField campoNombre;
 	private JTable table;
 
 
-	public TablaJugadores2(ArrayList<EstadisticaJugador> jugadores) {
+	public TablaBBDD(ArrayList<EstadisticaJugador> jugadores) {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

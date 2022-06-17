@@ -13,7 +13,7 @@ public class Conexion {
     static String user = "root";
     static String pass = "pymaso2002";
     static String driver = "com.mysql.cj.jdbc.Driver";
-
+    
     static Connection conexion;
     static Statement consulta;
     static ResultSet resultado;

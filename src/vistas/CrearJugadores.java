@@ -16,6 +16,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.SwingConstants;
@@ -26,14 +27,16 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.SpinnerListModel;
 import java.awt.Color;
 import javax.swing.border.BevelBorder;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
-public class TablaJugadores extends JFrame {
+public class CrearJugadores extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField campoNombre;
 
 
-	public TablaJugadores() {
+	public CrearJugadores() {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -107,9 +110,18 @@ public class TablaJugadores extends JFrame {
 		btnNewButton2.setBounds(284, 11, 130, 23);
 		panel.add(btnNewButton2);
 		
+		JButton btnNewButton_1 = new JButton("Modificar");
+		btnNewButton_1.setBounds(301, 94, 89, 23);
+		panel.add(btnNewButton_1);
+		
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new ControladorVentanas().abrirModificarJugador();
+			}
+		});
 		btnNewButton2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new ControladorVentanas().abrirTablaJugadores3();
+				new ControladorVentanas().abrirEliminarJugadores();
 			}
 		});
 		

@@ -34,13 +34,13 @@ public class Formulario extends JFrame {
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new ControladorVentanas().abrirTablaJugadores();
+				new ControladorVentanas().abrirCrearJugadores();
 			}
 		});
 
 		botonTabla.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new ControladorVentanas().abrirTablaJugadores2();
+				new ControladorVentanas().abrirTablaBBDD();
 			}
 		});
 	}
