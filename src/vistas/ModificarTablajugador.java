@@ -1,36 +1,30 @@
 package vistas;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
-
-import beans.EstadisticaJugador;
-import controlador.ControladorJugadores;
-
-import javax.swing.JComboBox;
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerListModel;
-import java.awt.Color;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
-public class ModificarJugador extends JFrame {
+import beans.Movimiento;
+import controlador.ControladorJugadores;
+
+public class ModificarTablajugador extends JFrame {
 
 	private JPanel contentPane;
+
 	/**
 	 * Create the frame.
 	 */
-	public ModificarJugador(ArrayList<EstadisticaJugador> jugadores){
+	public ModificarTablajugador(ArrayList<Movimiento> jugadores){
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -59,11 +53,12 @@ public class ModificarJugador extends JFrame {
 		btnNewButton1.setBackground(new Color(255, 153, 0));
 		btnNewButton1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EstadisticaJugador jugador = (EstadisticaJugador) comboBox.getSelectedItem();
-				new ControladorJugadores().modificar(jugador);
+				Movimiento jugador = (Movimiento) comboBox.getSelectedItem();
+				new ControladorJugadores().modificartabla(jugador);
 			}
 		});
 		btnNewButton1.setBounds(168, 121, 89, 23);
 		panel.add(btnNewButton1);
 	}
+
 }

@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import bbdd.Conexion;
+import beans.EstadisticaJugador;
 import beans.Movimiento;
 
 public class Movimientos {
@@ -20,8 +21,8 @@ public class Movimientos {
 			int Nºdeturnos = movimiento.getNºdeturnos();
 			// Crear_sentencia_para_insertar_en_BBDD
 			Conexion.ejecutarUpdate(
-				"INSERT INTO tablajugadores (nombre, victorias, empates, derrotas, Tiempodejuego, jugado, Nºdeturnos) VALUES ('"+
-				nombre+"', '"+victorias+"', '"+empates+"', '"+derrotas+"', + '"+Fechadecreación+"', '"+Tiempodejuego+"', '"+jugado+"', '"+Nºdeturnos+"');"
+				"INSERT INTO tablajugadores (nombre, victorias, empates, derrotas, Fechadecreación, Tiempodejuego, jugado, Nºdeturnos) VALUES ('"+
+				nombre+"', '"+victorias+"', '"+empates+"', '"+derrotas+"', '"+Fechadecreación+"', '"+Tiempodejuego+"', '"+jugado+"', '"+Nºdeturnos+"');"
 			);
 		}
 	public ArrayList<Movimiento> mostrarMovimiento(){
@@ -29,14 +30,14 @@ public class Movimientos {
 		ArrayList<Movimiento> jugador = new ArrayList<Movimiento>();
 		ResultSet resultado = Conexion.ejecutarSentencia("SELECT * FROM tablajugadores;");
 		try {
-			String nombre = null;
-			int victorias = 0;
-			int derrotas = 0;
-			int empates = 0;
-			int Fechadecreación = 0;
-			int Tiempodejuego = 0;
-			int jugado = 0;
-			int Nºdeturnos = 0;
+			String nombre = resultado.getString("Nombre");
+			int victorias = resultado.getInt("Victorias");
+			int derrotas = resultado.getInt("Derrotas");
+			int empates = resultado.getInt("Empates");
+			int Fechadecreación = resultado.getInt("Fechadecreacion");
+			int Tiempodejuego = resultado.getInt("Tiempodejuego");
+			int jugado = resultado.getInt("Jugado");
+			int Nºdeturnos = resultado.getInt("Nºdeturnos");
 			while(resultado.next()) {
 				jugador.add(new Movimiento(nombre, victorias, derrotas, empates, Fechadecreación, Tiempodejuego, jugado, Nºdeturnos));
 			}
@@ -44,5 +45,21 @@ public class Movimientos {
 			e.printStackTrace();
 		}
 		return jugador;
+	}
+	public void borrarMovimientos(Movimiento jugador) {
+		// Recoger_los_datos_requeridos_de_la_variable_jugador
+		String nombre = jugador.getNombre();
+		// Crear_sentencia_para_eliminar_en_BBDD
+		Conexion.ejecutarUpdate(
+			"DELETE FROM tablajugadores WHERE NOMBRE='"+nombre+"';"
+		);
+	}
+	public void modificarMovimientos(Movimiento jugador) {
+		// Recoger_los_datos_requeridos_de_la_variable_jugador
+		String nombre = jugador.getNombre();
+		// Crear_sentencia_para_modificar_en_BBDD
+		Conexion.ejecutarUpdate(
+			"UPDATE `tablajugadores` SET `Nombre`='[value-1]';"
+		);
 	}
 }

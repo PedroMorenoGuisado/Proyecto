@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import beans.EstadisticaJugador;
+import beans.Movimiento;
 import controlador.ControladorJugadores;
 import controlador.ControladorVentanas;
 
@@ -29,14 +30,16 @@ import java.awt.Color;
 import javax.swing.border.BevelBorder;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.SpinnerDateModel;
+import java.util.Date;
+import java.util.Calendar;
 
-public class CrearJugadores extends JFrame {
-
+public class CrearTablajugadores extends JFrame{
 	private JPanel contentPane;
 	private JTextField campoNombre;
 
 
-	public CrearJugadores() {
+	public CrearTablajugadores() {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -57,51 +60,41 @@ public class CrearJugadores extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Nombre");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(49, 39, 75, 23);
+		lblNewLabel.setBounds(49, 22, 75, 14);
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("victorias");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(49, 69, 75, 23);
+		lblNewLabel_1.setBounds(49, 47, 75, 14);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("empates");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(49, 94, 75, 23);
+		lblNewLabel_2.setBounds(49, 100, 75, 11);
 		panel.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("derrotas");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setBounds(49, 116, 75, 29);
+		lblNewLabel_3.setBounds(49, 120, 75, 14);
 		panel.add(lblNewLabel_3);
 		
 		campoNombre = new JTextField();
-		campoNombre.setBounds(142, 40, 107, 20);
+		campoNombre.setBounds(142, 23, 107, 14);
 		panel.add(campoNombre);
 		campoNombre.setColumns(10);
 		
-		JLabel lblNewLabel_5 = new JLabel("Nivel");
-		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_5.setBounds(49, 168, 74, 20);
-		panel.add(lblNewLabel_5);
-		
 		JSpinner campoVictorias = new JSpinner();
 		campoVictorias.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
-		campoVictorias.setBounds(142, 70, 107, 20);
+		campoVictorias.setBounds(142, 47, 100, 14);
 		panel.add(campoVictorias);
 		
 		JSpinner campoEmpates = new JSpinner();
-		campoEmpates.setBounds(142, 95, 107, 20);
+		campoEmpates.setBounds(142, 72, 100, 14);
 		panel.add(campoEmpates);
 		
 		JSpinner CampoDerrotas = new JSpinner();
-		CampoDerrotas.setBounds(142, 120, 107, 20);
+		CampoDerrotas.setBounds(142, 98, 100, 14);
 		panel.add(CampoDerrotas);
-		
-		JSpinner campoNivel = new JSpinner();
-		campoNivel.setModel(new SpinnerListModel(new String[] {"Principiante"}));
-		campoNivel.setBounds(142, 168, 107, 20);
-		panel.add(campoNivel);
 		
 		JButton btnNewButton2 = new JButton("Eliminar jugador");
 		btnNewButton2.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -114,6 +107,38 @@ public class CrearJugadores extends JFrame {
 		btnNewButton_1.setBackground(new Color(255, 153, 0));
 		btnNewButton_1.setBounds(301, 94, 89, 23);
 		panel.add(btnNewButton_1);
+		
+		JLabel lblNewLabel_4 = new JLabel("Fechadecreacion");
+		lblNewLabel_4.setBounds(44, 145, 89, 14);
+		panel.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("jugado");
+		lblNewLabel_5.setBounds(69, 170, 46, 14);
+		panel.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("N\u00BAdeturmos");
+		lblNewLabel_6.setBounds(58, 195, 75, 14);
+		panel.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("Tiempodejuego");
+		lblNewLabel_7.setBounds(49, 73, 75, 14);
+		panel.add(lblNewLabel_7);
+		
+		JSpinner CampoFechadecreacion = new JSpinner();
+		CampoFechadecreacion.setBounds(142, 120, 100, 14);
+		panel.add(CampoFechadecreacion);
+		
+		JSpinner CampoJugado = new JSpinner();
+		CampoJugado.setBounds(142, 145, 100, 14);
+		panel.add(CampoJugado);
+		
+		JSpinner CampoNºdeturnos = new JSpinner();
+		CampoNºdeturnos.setBounds(142, 170, 100, 14);
+		panel.add(CampoNºdeturnos);
+		
+		JSpinner CampoTiempodejuego = new JSpinner();
+		CampoTiempodejuego.setBounds(142, 195, 100, 14);
+		panel.add(CampoTiempodejuego);
 		
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -133,11 +158,15 @@ public class CrearJugadores extends JFrame {
 				int victorias = (int) campoVictorias.getValue();
 				int empates = (int) campoEmpates.getValue();
 				int derrotas = (int) CampoDerrotas.getValue();
-				String nivel = campoNivel.getToolTipText();
+				int Fechadecreacion = (int) CampoFechadecreacion.getValue();
+				int jugado = (int) CampoJugado.getValue();
+				int Nºdeturnos = (int) CampoNºdeturnos.getValue();
+				int Tiempodejuego = (int) CampoTiempodejuego.getValue();
+				
 				// Montar un objeto jugador
-				EstadisticaJugador jugador = new EstadisticaJugador(nombre, victorias, empates, derrotas, nivel);
+				Movimiento jugador = new Movimiento(nombre, victorias, empates, derrotas, Fechadecreacion, jugado, Nºdeturnos, Tiempodejuego);
 				// Llamar al controlador mandando el objeto jugador
-				new ControladorJugadores().guardarEstadisticasJugador(jugador);
+				new ControladorJugadores().guardarMovimiento(jugador);
 				
 			}
 		});

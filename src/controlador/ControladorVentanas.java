@@ -3,6 +3,7 @@ package controlador;
 import vistas.Formulario;
 import vistas.ModificarJugador;
 import vistas.CrearJugadores;
+import vistas.CrearTablajugadores;
 
 import java.util.ArrayList;
 
@@ -35,6 +36,8 @@ public class ControladorVentanas {
 	public void abrirModificarJugador() {
 		ArrayList<EstadisticaJugador> jugadores = new ControladorJugadores().actualizarEstadisticas();
 		new ModificarJugador(jugadores);
-		
+	}
+	public void abrirCrearTablajugadores() {
+		new CrearTablajugadores();
 	}
 }
